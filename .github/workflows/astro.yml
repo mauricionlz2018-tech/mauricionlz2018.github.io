@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying an Astro site to GitHub Pages
-#ndfs
+# Astro is a modern static site builder that allows you to create fast, content-focused websites.
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
 #
 name: Deploy Astro site to Pages
