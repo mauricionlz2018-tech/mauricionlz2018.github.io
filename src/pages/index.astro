@@ -1,8 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiteMaintenance from '../components/templates/SiteMaintenance.astro';
+import MainMe from '../components/templates/MainMe.astro';
+import Button from '../components/templates/button.astro';
+
+const navItems = [
+    {name: 'Inicio', href: '/'},
+    {name: 'Sobre mi', href: '/about'},
+    {name: 'Proyectos', href: '/projects'},
+    {name: 'Conocimientos', href: '/skills'}
+]
 ---
 
-<Layout>
-    <SiteMaintenance />
-</Layout>
+<Button items={navItems} />
+
+    <MainMe />
+<!--</Layout> -->
+
+

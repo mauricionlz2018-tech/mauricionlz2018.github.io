@@ -1,0 +1,25 @@
+---
+interface Props {
+  items: {
+    name: string;
+    href: string;
+  }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="bg-pink-200 border-2 border-pink-400 rounded-2xl shadow-inner p-6 my-4">
+  <ul class="flex flex-wrap gap-4 justify-center">
+    {items.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
