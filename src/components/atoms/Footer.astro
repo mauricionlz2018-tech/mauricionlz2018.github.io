@@ -1,13 +1,19 @@
 ---
-const { items = [] } = Astro.props;
+const { items = [] } = Astro.props as { items: FooterItem[] };
+
+interface FooterItem {
+  name: string;
+  href: string;
+  icon?: string;
+}
+
+
 ---
 
-<footer
-  class="fixed bottom-0 left-0 w-full bg-transparent border-t border-gray-700 z-40"
->
+<footer class="fixed bottom-0 left-0 w-full bg-transparent border-t border-gray-700 z-40">
   <div class="max-w-4xl mx-auto grid grid-cols-4 text-center text-xs py-3">
     {
-      items.length ? (
+      items.length > 0 ? (
         items.map((item) => (
           <a href={item.href} class="flex flex-col items-center gap-1">
             <span class="material-symbols-outlined">home</span>
@@ -17,30 +23,20 @@ const { items = [] } = Astro.props;
       ) : (
         <>
           <a href="/" class="flex flex-col items-center gap-1">
-            <>
-              <span class="material-symbols-outlined">home</span>
-              <span>Inicio</span>
-            </>
+            <span class="material-symbols-outlined">home</span>
+            <span>Inicio</span>
           </a>
           <a href="/sobre-mi" class="flex flex-col items-center gap-1">
-            <>
-              <span class="material-symbols-outlined">person</span>
-              <span>Sobre mí</span>
-            </>
+            <span class="material-symbols-outlined">person</span>
+            <span>Sobre mí</span>
           </a>
           <a href="/proyectos" class="flex flex-col items-center gap-1">
-            <>
-              <span class="material-symbols-outlined">layers</span>
-              <span>Proyectos</span>
-            </>
+            <span class="material-symbols-outlined">layers</span>
+            <span>Proyectos</span>
           </a>
           <a href="/conocimientos" class="flex flex-col items-center gap-1">
-            <>
-              <span class="material-symbols-outlined">
-                integration_instructions
-              </span>
-              <span>Conocimientos</span>
-            </>
+            <span class="material-symbols-outlined">integration_instructions</span>
+            <span>Conocimientos</span>
           </a>
         </>
       )
