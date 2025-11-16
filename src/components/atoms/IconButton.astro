@@ -1,0 +1,10 @@
+---
+const { icon, link } = Astro.props;
+import Icon from "../atoms/Icon.astro";
+---
+
+<a href={link} class="flex h-12 w-12 items-center justify-center 
+rounded-full bg-card-light dark:bg-card-dark shadow-sm 
+hover:scale-110 transition-transform">
+  <Icon name={icon} />
+</a>

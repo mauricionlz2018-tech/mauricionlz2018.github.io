@@ -1,0 +1,7 @@
+---
+const { size = "base", text, classes = "" } = Astro.props;
+---
+
+<p class={`text-${size} text-text-light-secondary dark:text-text-dark-secondary ${classes}`}>
+  {text}
+</p>
