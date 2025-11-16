@@ -1,0 +1,49 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<footer
+  class="fixed bottom-0 left-0 w-full bg-transparent border-t border-gray-700 z-40"
+>
+  <div class="max-w-4xl mx-auto grid grid-cols-4 text-center text-xs py-3">
+    {
+      items.length ? (
+        items.map((item) => (
+          <a href={item.href} class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined">home</span>
+            <span class="truncate">{item.name}</span>
+          </a>
+        ))
+      ) : (
+        <>
+          <a href="/" class="flex flex-col items-center gap-1">
+            <>
+              <span class="material-symbols-outlined">home</span>
+              <span>Inicio</span>
+            </>
+          </a>
+          <a href="/sobre-mi" class="flex flex-col items-center gap-1">
+            <>
+              <span class="material-symbols-outlined">person</span>
+              <span>Sobre mí</span>
+            </>
+          </a>
+          <a href="/proyectos" class="flex flex-col items-center gap-1">
+            <>
+              <span class="material-symbols-outlined">layers</span>
+              <span>Proyectos</span>
+            </>
+          </a>
+          <a href="/conocimientos" class="flex flex-col items-center gap-1">
+            <>
+              <span class="material-symbols-outlined">
+                integration_instructions
+              </span>
+              <span>Conocimientos</span>
+            </>
+          </a>
+        </>
+      )
+    }
+  </div>
+</footer>
