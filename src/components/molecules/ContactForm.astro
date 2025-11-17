@@ -1,0 +1,70 @@
+<section class="max-w-md mx-auto mt-10 p-6 bg-zinc-910 rounded-2xl shadow-xl">
+  <h2 class="text-2xl font-bold mb-6 text-center">Contáctame</h2>
+
+  <form id="contact-form" class="flex flex-col gap-4">
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Tu nombre"
+      required
+      class="w-full p-3 rounded-xl bg-zinc-800 border border-zinc-700"
+    />
+
+    <input
+      type="text"
+      id="contact"
+      name="contact"
+      placeholder="Correo o número"
+      required
+      class="w-full p-3 rounded-xl bg-zinc-800 border border-zinc-700"
+    />
+
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Escribe tu mensaje"
+      rows="4"
+      required
+      class="w-full p-3 rounded-xl bg-zinc-800 border border-zinc-700"
+    ></textarea>
+
+    <button
+      type="submit"
+      class="py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition font-semibold"
+    >
+      Enviar
+    </button>
+
+    <p id="form-status" class="text-center text-sm mt-2"></p>
+  </form>
+</section>
+
+<!-- SCRIPT DEL FORMULARIO -->
+<script type="module">
+  import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js";
+  emailjs.init("kQG78tq3Z7HZhTT3V"); 
+
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send("service_58k2vp9", "template_o8r6k8j", {
+        name: form.name.value,
+        contact: form.contact.value,
+        message: form.message.value,
+      })
+      .then(() => {
+        status.textContent = "Mensaje enviado correctamente ✔";
+        status.className = "text-green-400 text-center mt-2";
+        form.reset();
+      })
+      .catch(() => {
+        status.textContent = "Error al enviar, intenta de nuevo ❌";
+        status.className = "text-red-400 text-center mt-2";
+      });
+  });
+</script>
