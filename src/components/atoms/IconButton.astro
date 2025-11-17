@@ -1,10 +1,20 @@
 ---
+interface Props {
+  icon: string;
+  link: string;
+}
+
 const { icon, link } = Astro.props;
-import Icon from "../atoms/Icon.astro";
+
+const iconPaths: Record<string, string> = {
+  whatsapp: "/public/Icons/Whatsapp.png",
+  instagram: "/public/Icons/Instagram.png",
+  tiktok: "/public/Icons/Tiktok.png",
+  github: "/public/Icons/Github.png",
+  facebook: "/public/Icons/Facebook.png",
+};
 ---
 
-<a href={link} class="flex h-12 w-12 items-center justify-center 
-rounded-full bg-card-light dark:bg-card-dark shadow-sm 
-hover:scale-110 transition-transform">
-  <Icon name={icon} />
+<a href={link} target="_blank" rel="noopener noreferrer">
+  <img src={iconPaths[icon]} width="25" height="25" alt={icon} />
 </a>

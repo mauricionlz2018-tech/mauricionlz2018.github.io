@@ -1,54 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteMaintenance from '../components/templates/SiteMaintenance.astro';
-import MainMe from '../components/templates/MainMe.astro';
-import Button from '../components/templates/button.astro';
-import Footer from '../components/atoms/Footer.astro';
-import IconButton from '../components/atoms/IconButton.astro';
+import Layout from "../layouts/Layout.astro";
+import SiteMaintenance from "../components/templates/SiteMaintenance.astro";
+import MainMe from "../components/templates/MainMe.astro";
+import Button from "../components/templates/button.astro";
+import Footer from "../components/atoms/Footer.astro";
+import IconButton from "../components/atoms/IconButton.astro";
 
 interface Item {
-    name: string;
-    href: string;
+  name: string;
+  href: string;
 }
 
 const navItems = [
-    {name: 'Inicio', href: '/'},
-    {name: 'Sobre mi', href: '/Sobre-mi'},
-    {name: 'Proyectos', href: '/Proyectos'},
-    {name: 'Conocimientos', href: '/Conocimientos'},
-]
+  { name: "Inicio", href: "/" },
+  { name: "Sobre mi", href: "/Sobre-mi" },
+  { name: "Proyectos", href: "/Proyectos" },
+  { name: "Conocimientos", href: "/Conocimientos" },
+];
 ---
 
 <Layout>
-
   <!-- <SiteMaintenance /> -->
 
   <Button items={navItems} />
 
   <main class="pt-16 px-4 flex flex-col items-center text-center gap-6">
-
-    <div class="h-28 w-28 rounded-full bg-cover bg-center"
-      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnGBggDbP...");'>
+    <div
+      class="h-28 w-28 rounded-full bg-cover bg-center"
+      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnGBggDbP...");'
+    >
     </div>
 
     <h1 class="text-2xl font-bold">Mauricio Nolazco Lonjino</h1>
 
-    <p class="text-sm max-w-md text-text-light-secondary dark:text-text-dark-secondary">
-      Una breve biografía que habla de mis gustos y lo que hago.
+    <p
+      class="text-sm max-w-md text-text-light-secondary dark:text-text-dark-secondary"
+    >
+      Me gusta mucho los vieojuegos, la musica, ademas me encanta la tecnología.
     </p>
 
     <div class="flex gap-4">
-      <IconButton icon="code" link="#" />
-      <IconButton icon="palette" link="#" />
-      <IconButton icon="integration_instructions" link="#" />
+      <IconButton icon="github" link="https://github.com/mauricionlz2018-tech" />
+      <IconButton icon="whatsapp" link="https://wa.me/5574156828" />
+      <IconButton icon="facebook" link="https://facebook.com/TU_USUARIO" />
+      <IconButton icon="instagram" link="https://instagram.com/nolazco2020" />
+      <IconButton icon="tiktok" link="https://tiktok.com/@themiauu66" />
     </div>
-
   </main>
 
   <!-- <MainMe /> -->
 
   <Footer />
-
 </Layout>
-
-
