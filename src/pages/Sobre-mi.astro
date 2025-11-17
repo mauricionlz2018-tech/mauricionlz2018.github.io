@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/templates/button.astro';
 import Footer from '../components/atoms/Footer.astro';
 import IconButton from '../components/atoms/IconButton.astro';
+import Avatar from '../components/molecules/Avatar.astro';
 
 
 const navItems = [
@@ -24,11 +25,7 @@ const navItems = [
         <div class="absolute -top-4 -left-12 h-16 w-16 rounded-full bg-primary/20 blur-xl"></div>
         <div class="absolute -bottom-4 -right-12 h-16 w-16 rounded-full bg-purple-400/20 blur-xl"></div>
 
-        <img 
-          src="/public/images/Yo.jpeg"
-          alt="Foto de Mauricio"
-          class="h-32 w-32 rounded-full object-cover shadow-lg ring-4 ring-primary/20"
-        />
+        <Avatar src="/images/Yo.jpeg" alt="Foto de Mi" />
 
         <div class="flex flex-col">
           <h1 class="text-3xl font-bold text-gradient">
