@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -7,16 +7,54 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
     <meta name="generator" content={Astro.generator} />
     <title>Mauricio Nolazco | Portafolio</title>
   </head>
 
-  <body class="min-h-screen flex flex-col bg-[#18181B] text-white font-sans">
+  <body class="min-h-screen flex flex-col bg-[#18181B] text-white font-sans overflow-hidden">
 
-    <main class="grow">
-      <slot />  
+    <!-- Fondo animado global -->
+    <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div class="relative w-full h-full animate-glow-slow">
+        
+        <!-- Círculo principal púrpura -->
+        <div
+          class="
+            absolute -top-40 -left-40
+            h-[450px] w-[450px]
+            bg-purple-600/30
+            blur-[120px]
+            rounded-full
+          "
+        ></div>
+
+        <!-- Círculo secundario rosa -->
+        <div
+          class="
+            absolute bottom-0 right-0
+            h-[350px] w-[350px]
+            bg-pink-600/20
+            blur-[120px]
+            rounded-full
+          "
+        ></div>
+
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="grow relative z-10">
+      <slot />
     </main>
 
   </body>

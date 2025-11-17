@@ -4,31 +4,35 @@ import Button from '../components/templates/button.astro';
 import Footer from '../components/atoms/Footer.astro';
 import IconButton from '../components/atoms/IconButton.astro';
 
+// IMPORTAR LA IMAGEN (Astro oficial)
+
 const navItems = [
     {name: 'Inicio', href: '/'},
     {name: 'Sobre mi', href: '/Sobre-mi'},
     {name: 'Proyectos', href: '/Proyectos'},
     {name: 'Conocimientos', href: '/Conocimientos'},
-]
+];
 ---
-
 <Layout>
 
   <!-- NAV -->
   <Button items={navItems} />
 
-  <!-- CONTENIDO -->
   <main class="grow pt-16 px-4">
     <div class="flex w-full flex-col items-center gap-10 text-center">
 
+      <!-- FOTO + DECORACIONES -->
       <div class="relative flex flex-col items-center gap-4">
+
         <div class="absolute -top-4 -left-12 h-16 w-16 rounded-full bg-primary/20 blur-xl"></div>
         <div class="absolute -bottom-4 -right-12 h-16 w-16 rounded-full bg-purple-400/20 blur-xl"></div>
 
-        <div
-          class="h-32 w-32 rounded-full bg-cover bg-center bg-no-repeat shadow-lg"
-          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnGBggDbPMOfYcUtFDwvpgQXTwvtQXt1NPehBKoL86THQ-9kFipB6Jo9wNuB4sjXVkRQtXqvtKm7oeJbVDiryEFvfRfSvWbwtdAxu-WkPR6-urINubKcAe54B9qGft9daQ30omXENksIlw1mPnXIG8lDTzo_1oUTu3vnciQsJEYDD4JnDchUXUcDgC7n2m5nuMmqsDxdoJ0ybbBWC0GTkBYQonnZEqI_FSBgmB7PF94hXmivSxEFeYmjQyMc3DpIQZnBoms1y6IMw");'
-        ></div>
+        <!-- FOTO usando import -->
+        <img 
+          src="/public/images/Yo.jpeg"
+          alt="Foto de Mauricio"
+          class="h-32 w-32 rounded-full object-cover shadow-lg ring-4 ring-primary/20"
+        />
 
         <div class="flex flex-col">
           <h1 class="text-3xl font-bold text-gradient">
@@ -42,15 +46,7 @@ const navItems = [
 
       <div class="w-full max-w-md space-y-6 text-left">
         <p class="text-base leading-relaxed text-text-light-secondary dark:text-text-dark-secondary">
-          ¡Hola! Soy Ana, una apasionada desarrolladora y diseñadora con un profundo amor por la tecnología y el arte digital...
-        </p>
-
-        <p class="text-base leading-relaxed text-text-light-secondary dark:text-text-dark-secondary">
-          Mi camino profesional me ha llevado a explorar el desarrollo full-stack, donde disfruto construyendo tanto la lógica robusta del backend como las interfaces...
-        </p>
-
-        <p class="text-base leading-relaxed text-text-light-secondary dark:text-text-dark-secondary">
-          Fuera del código, me inspiro en la fotografía, el diseño gráfico y la música...
+          ¡Hola! Soy Mauricio, un apasionado desarrollador y creador digital...
         </p>
       </div>
     </div>
