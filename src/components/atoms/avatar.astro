@@ -1,0 +1,10 @@
+---
+const { src, alt = "" } = Astro.props;
+---
+
+<div
+  class="h-28 w-28 rounded-full bg-cover bg-center bg-no-repeat"
+  style={`background-image: url('${src}')`}
+  data-alt={alt}
+/>
+

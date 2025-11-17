@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/templates/button.astro";
+import Footer from "../components/atoms/Footer.astro";
+import ProjectCard from "../components/molecules/ProjectCard.astro";
+
+interface Item {
+  name: string;
+  href: string;
+}
+
+const navItems: Item[] = [
+  { name: "Inicio", href: "/" },
+  { name: "Sobre mi", href: "/about" },
+  { name: "Proyectos", href: "/projects" },
+  { name: "Conocimientos", href: "/skills" },
+];
+---
+
+<Layout>
+  <Button items={navItems} />
+
+  <main class="grow pt-16 px-4">
+    <div class="flex w-full flex-col items-center gap-8 text-center">
+      <h1 class="text-3xl font-bold text-gradient">Proyectos</h1>
+      <p
+        class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary"
+      >
+        Una selección de proyectos principales.
+      </p>
+
+      <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+        <ProjectCard
+          title="Plataforma de pagos con Open Payments (MicroPay)"
+          image="/images/MicroPay.jpeg"
+          tags={[
+            { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
+            { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
+          ]}
+        />
+
+        <ProjectCard
+          title="Sistema para el seguimiento de egresados de la UMB"
+          image="/images/egresados.png"
+          tags={[
+            { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
+            { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
+            { label: "python", bg: "bg-[#dad884]", text: "text-[#7ba1e7]" },
+            { label: "Bootstrap", bg: "bg-[#1d3d2c]", text: "text-[#86efac]" },
+          ]}
+        />
+
+        <ProjectCard
+          title="Proyecto de una página web en la Epo 316"
+          image="/images/Escuelaepo.png"
+          tags={[
+            { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
+            { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
+            { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
+          ]}
+        />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

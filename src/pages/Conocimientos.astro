@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/atoms/Footer.astro";
+import TechCard from "../components/molecules/TechCard.astro";
+---
+
+<Layout>
+  <main class="grow pt-12 px-4 text-white font-sans">
+    <div class="mx-auto max-w-md">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl font-bold tracking-tight">Mis Conocimientos</h1>
+        <p class="mt-2 text-base text-zinc-400">
+          Explora las tecnologías y herramientas que domino.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Frontend</h2>
+
+          <div class="space-y-3">
+            <TechCard name="React" percent={28} />
+            <TechCard name="Astro" percent={30} />
+            <TechCard name="Tailwind CSS" percent={25} />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Backend</h2>
+
+          <div class="space-y-3">
+            <TechCard name="Node.js" percent={50} />
+            <TechCard name="Python (Django)" percent={40} />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Diseño</h2>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">Figma</span>
+            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">Adobe XD</span>
+            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">UI/UX</span>
+            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">Blender</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Otras Herramientas</h2>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-zinc-800 px-3 py-1 text-sm font-medium text-zinc-400">GitHub</span>
+            <span class="rounded-full bg-zinc-800 px-3 py-1 text-sm font-medium text-zinc-400">Docker</span>
+            <span class="rounded-full bg-zinc-800 px-3 py-1 text-sm font-medium text-zinc-400">Linux</span>
+            <span class="rounded-full bg-zinc-800 px-3 py-1 text-sm font-medium text-zinc-400">MySQL</span>
+            <span class="rounded-full bg-zinc-800 px-3 py-1 text-sm font-medium text-zinc-400">Firebase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
