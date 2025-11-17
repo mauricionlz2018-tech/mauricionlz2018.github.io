@@ -4,7 +4,6 @@ import Button from '../components/templates/button.astro';
 import Footer from '../components/atoms/Footer.astro';
 import IconButton from '../components/atoms/IconButton.astro';
 
-// IMPORTAR LA IMAGEN (Astro oficial)
 
 const navItems = [
     {name: 'Inicio', href: '/'},
@@ -15,19 +14,16 @@ const navItems = [
 ---
 <Layout>
 
-  <!-- NAV -->
   <Button items={navItems} />
 
   <main class="grow pt-16 px-4">
     <div class="flex w-full flex-col items-center gap-10 text-center">
 
-      <!-- FOTO + DECORACIONES -->
       <div class="relative flex flex-col items-center gap-4">
 
         <div class="absolute -top-4 -left-12 h-16 w-16 rounded-full bg-primary/20 blur-xl"></div>
         <div class="absolute -bottom-4 -right-12 h-16 w-16 rounded-full bg-purple-400/20 blur-xl"></div>
 
-        <!-- FOTO usando import -->
         <img 
           src="/public/images/Yo.jpeg"
           alt="Foto de Mauricio"

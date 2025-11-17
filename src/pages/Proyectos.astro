@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/templates/button.astro";
 import Footer from "../components/atoms/Footer.astro";
-import IconButton from "../components/atoms/IconButton.astro";
+import ProjectCard from "../components/molecules/ProjectCard.astro";
 
 interface Item {
   name: string;
@@ -19,143 +19,49 @@ const navItems: Item[] = [
 
 <Layout>
   <Button items={navItems} />
-  <div
-    class="pointer-events-none absolute -top-10 left-10 h-24 w-24 rounded-full bg-purple-400/20 blur-2xl"
-  >
-  </div>
-  <div
-    class="pointer-events-none absolute bottom-10 right-10 h-24 w-24 rounded-full bg-indigo-500/20 blur-2xl"
-  >
-  </div>
 
-  <div
-    class="relative flex min-h-screen w-full flex-col pb-24
-              bg-background-light dark:bg-background-dark
-              text-text-light-primary dark:text-text-dark-primary
-              font-display"
-  >
-    <main class="grow pt-16 px-4">
-      <div class="flex w-full flex-col items-center gap-8 text-center">
-        <div class="relative flex flex-col items-center gap-4">
-          <div
-            class="absolute -top-4 -left-12 h-16 w-16 rounded-full bg-primary/20 blur-xl"
-          >
-          </div>
-          <div
-            class="absolute -bottom-4 -right-12 h-16 w-16 rounded-full bg-purple-400/20 blur-xl"
-          >
-          </div>
+  <main class="grow pt-16 px-4">
+    <div class="flex w-full flex-col items-center gap-8 text-center">
+      <h1 class="text-3xl font-bold text-gradient">Proyectos</h1>
+      <p
+        class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary"
+      >
+        Una selección de proyectos principales.
+      </p>
 
-          <h1 class="text-3xl font-bold text-gradient">Proyectos</h1>
+      <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+        <ProjectCard
+          title="Plataforma de pagos con Open Payments (MicroPay)"
+          image="/images/MicroPay.jpeg"
+          tags={[
+            { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
+            { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
+          ]}
+        />
 
-          <p
-            class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary"
-          >
-            Una selección de proyectos principales.
-          </p>
-        </div>
+        <ProjectCard
+          title="Sistema para el seguimiento de egresados de la UMB"
+          image="/images/egresados.png"
+          tags={[
+            { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
+            { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
+            { label: "python", bg: "bg-[#dad884]", text: "text-[#7ba1e7]" },
+            { label: "Bootstrap", bg: "bg-[#1d3d2c]", text: "text-[#86efac]" },
+          ]}
+        />
 
-        <div class="grid grid-cols-2 gap-4 w-full max-w-md">
-          <div
-            class="group relative w-full overflow-hidden rounded-xl bg-card-light shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-card-dark flex flex-col"
-          >
-            <img
-              src="/public/images/MicroPay.jpeg"
-              class="h-28 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              alt="Project 1 Thumbnail"
-            />
-
-            <div class="p-3 flex flex-col grow">
-              <h2 class="text-sm font-bold text-left leading-tight">
-                Plataforma de pagos con Open Payments (MicroPay)
-              </h2>
-              <div class="mt-auto pt-2 flex flex-wrap gap-1">
-                <span
-                  class="tag bg-[#22305A] text-[#88C3FD] dark:bg-[#1E3A8A]/60 dark:text-[#88C3FD]"
-                >
-                  React
-                </span>
-                <span
-                  class="tag bg-[#1D3D2C] text-[#86EFAC] dark:bg-[#064E3B]/60 dark:text-[#50eeaf]"
-                >
-                  Node.js
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="group relative w-full overflow-hidden rounded-xl bg-card-light shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-card-dark flex flex-col"
-          >
-            <img
-              src="/public/images/egresados.png"
-              class="h-28 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-
-            <div class="p-3 flex flex-col grow">
-              <h2 class="text-sm font-bold text-left leading-tight">
-                Sistema para el seguimiento de egresados de la UMB
-              </h2>
-              <div class="mt-auto pt-2 flex flex-wrap gap-1">
-                <span
-                  class="tag bg-[#532224] text-[#fc9773] dark:bg-[#532224]/60 dark:text-[#fc9773]"
-                >
-                  mysql
-                </span>
-                <span
-                  class="tag bg-[#4c331e] text-[#fde047] dark:bg-[#4c331e]/60 dark:text-[#fde047]"
-                >
-                  js
-                </span>
-                <span
-                  class="tag bg-[#dad884] text-[#7ba1e7] dark:bg-[#dad884]/60 dark:text-[#5068ee]"
-                >
-                  python
-                </span>
-                <span
-                  class="tag bg-[#1d3d2c] text-[#86efac] dark:bg-[#064e3b]/60 dark:text-[#50eeaf]"
-                >
-                  Bootstrap
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="group relative w-full overflow-hidden rounded-xl bg-card-light shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-card-dark flex flex-col"
-          >
-            <img
-              src="/public/images/Escuelaepo.png"
-              class="h-28 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-
-            <div class="p-3 flex flex-col grow">
-              <h2 class="text-sm font-bold text-left leading-tight">
-                Proyecto de una página web en la Epo 316
-              </h2>
-              <div class="mt-auto pt-2 flex flex-wrap gap-1">
-                <span
-                  class="tag bg-[#22305a] text-[#88c3fd] dark:bg-[#1e3a8a]/60 dark:text-[#88c3fd]"
-                >
-                  html
-                </span>
-                <span
-                  class="tag bg-[#1d3d2c] text-[#86efac] dark:bg-[#064e3b]/60 dark:text-[#50eeaf]"
-                >
-                  css
-                </span>
-                <span
-                  class="tag bg-[#4c331e] text-[#fde047] dark:bg-[#4c331e]/60 dark:text-[#fde047]"
-                >
-                  js
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProjectCard
+          title="Proyecto de una página web en la Epo 316"
+          image="/images/Escuelaepo.png"
+          tags={[
+            { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
+            { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
+            { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
+          ]}
+        />
       </div>
-    </main>
+    </div>
+  </main>
 
-    <Footer />
-  </div>
+  <Footer />
 </Layout>
