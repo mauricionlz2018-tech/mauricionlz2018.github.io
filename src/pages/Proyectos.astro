@@ -3,9 +3,39 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/atoms/Footer.astro";
 import ProjectCard from "../components/molecules/ProjectCard.astro";
 
-const base = import.meta.env.BASE_URL;
----
+const base = import.meta.env.BASE_URL || '/';
+const toAssetUrl = (path: string) => new URL(path.replace(/^\/+/, ''), base).pathname;
 
+const projects = [
+  {
+    title: "Plataforma de pagos con Open Payments (MicroPay)",
+    image: toAssetUrl("images/MicroPay.jpeg"),
+    tags: [
+      { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
+      { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
+    ],
+  },
+  {
+    title: "Sistema para el seguimiento de egresados de la UMB",
+    image: toAssetUrl("images/egresados.png"),
+    tags: [
+      { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
+      { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
+      { label: "python", bg: "bg-[#dad884]", text: "text-[#7ba1e7]" },
+      { label: "Bootstrap", bg: "bg-[#1d3d2c]", text: "text-[#86efac]" },
+    ],
+  },
+  {
+    title: "Proyecto de una página web en la Epo 316",
+    image: toAssetUrl("images/Escuelaepo.png"),
+    tags: [
+      { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
+      { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
+      { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
+    ],
+  }
+];
+---
 
 <Layout>
   <main class="grow pt-16 px-4">
@@ -16,36 +46,10 @@ const base = import.meta.env.BASE_URL;
         Una selección de proyectos principales.
       </p>
 
-      <div class="grid grid-cols-2 gap-4 w-full max-w-md">
-        <ProjectCard
-          title="Plataforma de pagos con Open Payments (MicroPay)"
-          image=`${base}images/MicroPay.jpeg`
-          tags={[
-            { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
-            { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
-          ]}
-        />
-
-        <ProjectCard
-          title="Sistema para el seguimiento de egresados de la UMB"
-          image={`${base}images/egresados.png`}
-          tags={[
-            { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
-            { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
-            { label: "python", bg: "bg-[#dad884]", text: "text-[#7ba1e7]" },
-            { label: "Bootstrap", bg: "bg-[#1d3d2c]", text: "text-[#86efac]" },
-          ]}
-        />
-
-        <ProjectCard
-          title="Proyecto de una página web en la Epo 316"
-          image={`${base}images/Escuelaepo.png`}
-          tags={[
-            { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
-            { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
-            { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
-          ]}
-        />
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
+        {projects.map(project => (
+          <ProjectCard title={project.title} image={project.image} tags={project.tags} />
+        ))}
       </div>
     </div>
   </main>
