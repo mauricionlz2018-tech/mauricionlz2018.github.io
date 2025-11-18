@@ -8,6 +8,8 @@ interface Item {
   name: string;
   href: string;
 }
+const base = import.meta.env.BASE_URL;
+
 
 ---
 
@@ -25,7 +27,7 @@ interface Item {
       <div class="grid grid-cols-2 gap-4 w-full max-w-md">
         <ProjectCard
           title="Plataforma de pagos con Open Payments (MicroPay)"
-          image="/images/MicroPay.jpeg"
+          image={`${base}images/MicroPay.jpeg`}
           tags={[
             { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
             { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
@@ -34,7 +36,7 @@ interface Item {
 
         <ProjectCard
           title="Sistema para el seguimiento de egresados de la UMB"
-          image="/images/egresados.png"
+          image={`${base}images/egresados.png`}
           tags={[
             { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
             { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
@@ -45,7 +47,7 @@ interface Item {
 
         <ProjectCard
           title="Proyecto de una página web en la Epo 316"
-          image="/images/Escuelaepo.png"
+          image={`${base}images/Escuelaepo.png`}
           tags={[
             { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
             { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
