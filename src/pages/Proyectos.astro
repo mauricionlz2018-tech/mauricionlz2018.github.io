@@ -28,16 +28,14 @@ const projects = [
   },
   {
     title: "Proyecto de una página web en la Epo 316",
-    image: `${base}assets/images/Escuelaepo.png`,
+    image: `${base}/assets/images/Escuelaepo.png`,
     tags: [
       { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
       { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
       { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
     ],
-  }
+  },
 ];
-
-
 ---
 
 <Layout>
@@ -45,14 +43,22 @@ const projects = [
     <div class="flex w-full flex-col items-center gap-8 text-center">
       <h1 class="text-3xl font-bold text-gradient">Proyectos</h1>
 
-      <p class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary">
+      <p
+        class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary"
+      >
         Una selección de proyectos principales.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
-        {projects.map(project => (
-          <ProjectCard title={project.title} image={project.image} tags={project.tags} />
-        ))}
+        {
+          projects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              image={project.image}
+              tags={project.tags}
+            />
+          ))
+        }
       </div>
     </div>
   </main>
