@@ -1,33 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/templates/button.astro";
 import Footer from "../components/atoms/Footer.astro";
 import ProjectCard from "../components/molecules/ProjectCard.astro";
 
-interface Item {
-  name: string;
-  href: string;
-}
 const base = import.meta.env.BASE_URL;
-
-
 ---
 
-<Layout>
 
+<Layout>
   <main class="grow pt-16 px-4">
     <div class="flex w-full flex-col items-center gap-8 text-center">
       <h1 class="text-3xl font-bold text-gradient">Proyectos</h1>
-      <p
-        class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary"
-      >
+
+      <p class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary">
         Una selección de proyectos principales.
       </p>
 
       <div class="grid grid-cols-2 gap-4 w-full max-w-md">
         <ProjectCard
           title="Plataforma de pagos con Open Payments (MicroPay)"
-          image={`${base}images/MicroPay.jpeg`}
+          image={`${base}images/MicroPay.jpeg`} 
           tags={[
             { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
             { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
