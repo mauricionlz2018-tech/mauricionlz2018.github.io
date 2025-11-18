@@ -1,21 +1,25 @@
 ---
 interface Props {
-  icon: string;
+  icon: string; 
   link: string;
 }
 
 const { icon, link } = Astro.props;
 
-const base = import.meta.env.BASE_URL;
-
-const iconPaths: Record<string, string> = {
-  whatsapp: base + "assets/Icons/Whatsapp.png",
-  instagram: base + "assets/Icons/Instagram.png",
-  tiktok: base + "assets/Icons/Tiktok.png",
-  github: base + "assets/Icons/Github.png",
-  facebook: base + "assets/Icons/Facebook.png",
+const colors: Record<string, string> = {
+  whatsapp: "text-green-500",
+  instagram: "text-pink-500",
+  tiktok: "text-gray-200",
+  github: "text-purple-500",
+  facebook: "text-blue-500",
 };
 ---
-<a href={link} target="_blank" rel="noopener noreferrer">
-  <img src={iconPaths[icon]} width="25" height="25" alt={icon} />
+
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`font-semibold hover:underline ${colors[icon]}`}
+>
+  {icon.charAt(0).toUpperCase() + icon.slice(1)}
 </a>
