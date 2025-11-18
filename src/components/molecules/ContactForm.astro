@@ -1,7 +1,7 @@
 <section class="max-w-md mx-auto mt-10 p-6 bg-zinc-910 rounded-2xl shadow-xl">
   <h2 class="text-2xl font-bold mb-6 text-center">Contáctame</h2>
 
-  <form id="contact-form" class="flex flex-col gap-4">
+  <form action="https://formsubmit.co/mauricionlz2018@gmail.com" id="contact-form" class="flex flex-col gap-4">
     <input
       type="text"
       id="name"
@@ -40,7 +40,7 @@
   </form>
 </section>
 
-<!--  -->
+<!--Validacion del formulario con emailjs -->
 <script type="module">
   import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js";
   emailjs.init("kQG78tq3Z7HZhTT3V"); 
@@ -58,12 +58,12 @@
         message: form.message.value,
       })
       .then(() => {
-        status.textContent = "Mensaje enviado correctamente ✔";
+        status.textContent = "Mensaje enviado correctamente ";
         status.className = "text-green-400 text-center mt-2";
         form.reset();
       })
       .catch(() => {
-        status.textContent = "Error al enviar, intenta de nuevo ❌";
+        status.textContent = "Error al enviar, intenta de nuevo ";
         status.className = "text-red-400 text-center mt-2";
       });
   });
