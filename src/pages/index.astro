@@ -11,11 +11,13 @@ interface Item {
   href: string;
 }
 
-const navItems = [
-  { name: "Inicio", href: "/" },
-  { name: "Sobre mi", href: "/Sobre-mi" },
-  { name: "Proyectos", href: "/Proyectos" },
-  { name: "Conocimientos", href: "/Conocimientos" },
+const base = import.meta.env.BASE_URL;
+
+const navItems: Item[] = [
+  { name: "Inicio", href: `${base}` },
+  { name: "Sobre mi", href: `${base}Sobre-mi/` },
+  { name: "Proyectos", href: `${base}Proyectos/` },
+  { name: "Conocimientos", href: `${base}Conocimientos/` },
 ];
 ---
 
@@ -33,9 +35,7 @@ const navItems = [
 
     <h1 class="text-2xl font-bold">Mauricio Nolazco Lonjino</h1>
 
-    <p
-      class="text-sm max-w-md text-text-light-secondary dark:text-text-dark-secondary"
-    >
+    <p class="text-sm max-w-md text-text-light-secondary dark:text-text-dark-secondary">
       Me gusta mucho los vieojuegos, la musica, ademas me encanta la tecnología.
     </p>
 
@@ -50,5 +50,5 @@ const navItems = [
 
   <!-- <MainMe /> -->
 
-  <Footer />
+  <Footer items={navItems} />
 </Layout>
