@@ -9,21 +9,23 @@ interface FooterItem {
 
 const base = import.meta.env.BASE_URL;
 
-const currentPath = Astro.url.pathname;
-
 const defaultItems: FooterItem[] = [
-  { name: "Inicio", href: `${base}`, icon: "home" },
-  { name: "Sobre mí", href: `${base}Sobre-mi/`, icon: "person" },
-  { name: "Proyectos", href: `${base}Proyectos/`, icon: "layers" },
-  { name: "Conocimientos", href: `${base}Conocimientos/`, icon: "integration_instructions" },
+  { name: "Inicio", href: `${base}` },
+  { name: "Sobre mí", href: `${base}Sobre-mi/` },
+  { name: "Proyectos", href: `${base}Proyectos/` },
+  { name: "Conocimientos", href: `${base}Conocimientos/` },
 ];
 
 const menu = (items.length > 0 ? items : defaultItems);
 
+const currentPath = Astro.url.pathname;
+
 const isActive = (href: string) => {
   const normalize = (p: string) => p.endsWith("/") ? p : p + "/";
-  return normalize(currentPath) === normalize(href);
+
+  return normalize(currentPath) === normalize(new URL(href, Astro.site).pathname);
 };
+
 ---
 
 <footer class="fixed bottom-0 left-0 w-full backdrop-blur-xl bg-black/40 border-t border-white/10 z-40 shadow-[0_-4px_30px_rgba(0,0,0,0.4)]">
