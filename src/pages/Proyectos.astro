@@ -9,9 +9,9 @@ const toAssetUrl = (path: string) => new URL(path.replace(/^\/+/, ''), base).pat
 const projects = [
   {
     title: "Plataforma de pagos con Open Payments (MicroPay)",
-    description: "Plataforma de pagos ",
+    description: "Plataforma de pagos",
     github: "https://github.com/mauricionlz2018-tech/MicroPay",
-    image: toAssetUrl("images/MicroPay.jpeg"),
+    image: "/assets/images/MicroPay.jpeg",
     tags: [
       { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
       { label: "Node.js", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Sistema para el seguimiento de egresados de la UMB",
-    image: toAssetUrl("images/egresados.png"),
+    image: "/assets/images/egresados.png",
     tags: [
       { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
       { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
@@ -29,14 +29,15 @@ const projects = [
   },
   {
     title: "Proyecto de una página web en la Epo 316",
-    image: toAssetUrl("images/Escuelaepo.png"),
+    image: "/assets/images/Escuelaepo.png",
     tags: [
       { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
       { label: "css", bg: "bg-[#1D3D2C]", text: "text-[#86EFAC]" },
       { label: "js", bg: "bg-[#4c331e]", text: "text-[#fde047]" },
     ],
-  }
+  },
 ];
+
 ---
 
 <Layout>
