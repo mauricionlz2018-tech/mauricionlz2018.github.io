@@ -9,16 +9,9 @@ interface Item {
   href: string;
 }
 
-const navItems: Item[] = [
-  { name: "Inicio", href: "/" },
-  { name: "Sobre mi", href: "/about" },
-  { name: "Proyectos", href: "/projects" },
-  { name: "Conocimientos", href: "/skills" },
-];
 ---
 
 <Layout>
-  <Button items={navItems} />
 
   <main class="grow pt-16 px-4">
     <div class="flex w-full flex-col items-center gap-8 text-center">
