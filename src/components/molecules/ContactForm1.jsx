@@ -47,7 +47,6 @@ export default function ContactForm() {
             descripcion: messageRef.current.value
         };
 
-        // Validación básica
         if (!formData.nombre || !formData.correo || !formData.descripcion) {
             setStatus("Por favor completa todos los campos");
             setLoading(false);
