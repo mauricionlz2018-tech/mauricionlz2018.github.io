@@ -5,6 +5,7 @@ import MainMe from "../components/templates/MainMe.astro";
 import Button from "../components/templates/button.astro";
 import Footer from "../components/atoms/Footer.astro";
 import IconButton from "../components/atoms/IconButton.astro";
+import ContactForm1 from '../components/molecules/ContactForm1.jsx';
 
 interface Item {
   name: string;
@@ -19,6 +20,8 @@ const navItems: Item[] = [
   { name: "Sobre mi", href: `${base}Sobre-mi/` },
   { name: "Proyectos", href: `${base}Proyectos/` },
   { name: "Conocimientos", href: `${base}Conocimientos/` },
+  { name: "Contacto", href: `${base}contact/` },
+  { name: "Blog", href: `${base}Blog/` },
 ];
 ---
 
