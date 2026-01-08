@@ -1,0 +1,39 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Pagination from '../../../components/molecules/Pagination.astro'
+
+const perPage = 5
+
+const modules = Object.entries(import.meta.glob('../*.md', { eager: true }))
+  .map(([path, mod]: [string, any]) => {
+    const slug = (path.split('/').pop() ?? '').replace('.md', '')
+    const m = mod as any
+    return { slug, frontmatter: m.frontmatter }
+  })
+  .sort((a, b) => Number(new Date(b.frontmatter?.pubDate ?? 0)) - Number(new Date(a.frontmatter?.pubDate ?? 0)))
+
+const total = Math.max(1, Math.ceil(modules.length / perPage))
+const current = Math.max(1, Math.min(total, Number(Astro.params.page || 1)))
+
+const start = (current - 1) * perPage
+const pagePosts = modules.slice(start, start + perPage)
+
+---
+
+<Layout>
+  <main class="mx-auto max-w-4xl py-12 px-4">
+    <h1 class="text-3xl font-semibold mb-6">Entradas</h1>
+
+    <ul class="space-y-6">
+      {pagePosts.map(post => (
+        <li class="border rounded-lg p-4 hover:shadow">
+          <a href={`/posts/${post.slug}`} class="text-xl font-medium">{post.frontmatter.title}</a>
+          <p class="text-sm text-gray-500">{post.frontmatter.pubDate} · {post.frontmatter.author}</p>
+          {post.frontmatter.description ? <p class="mt-2 text-gray-700">{post.frontmatter.description}</p> : null}
+        </li>
+      ))}
+    </ul>
+
+    <Pagination current={current} total={total} base="/posts/page" />
+  </main>
+</Layout>
