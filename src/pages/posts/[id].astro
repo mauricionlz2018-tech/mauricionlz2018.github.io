@@ -1,4 +1,33 @@
---- 
+---
+import Layout from '../../layouts/Layout.astro'
 
+const modules = Object.entries(import.meta.glob('./*.md', { eager: true }))
+	.map(([path, mod]: [string, any]) => {
+		const slug = (path.split('/').pop() ?? '').replace('.md', '')
+		const m = mod as any
+		return { slug, frontmatter: m.frontmatter, Content: m.default }
+	})
+
+const post = modules.find(p => p.slug === Astro.params.id)
+
+if (!post) {
+	throw new Error('Entrada no encontrada')
+}
+
+const Content = post.Content
 
 ---
+
+<Layout>
+	<article class="mx-auto max-w-3xl py-12 px-4">
+		<header class="mb-6">
+			<h1 class="text-3xl font-semibold">{post.frontmatter.title}</h1>
+			<p class="text-sm text-gray-500">{post.frontmatter.pubDate} · {post.frontmatter.author}</p>
+		</header>
+
+		<section class="prose prose-lg">
+			<Content />
+		</section>
+	</article>
+</Layout>
+
