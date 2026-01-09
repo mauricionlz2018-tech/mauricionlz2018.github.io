@@ -6,7 +6,7 @@ pubDate: 2025-01-19
 tags: ["astro", "aprendizaje"]
 ---
 
-# ¡Bienvenido a mi blog!
+# ¡Bienvenido a mi blog! Primer apart
 
 Este es mi primer artículo en Astro.
 Verificando el funcionamiento de Astro.
