@@ -6,22 +6,17 @@ import type { CollectionEntry } from 'astro:content'
 const allPosts = await getCollection('posts', ({ data }: { data: Record<string, any> }) => data.draft !== true)
 const sortedPosts = allPosts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 const posts = sortedPosts.slice(0, 5)
-const totalPosts = sortedPosts.length
-const totalPages = Math.ceil(totalPosts / 5)
+const totalPages = Math.ceil(sortedPosts.length / 5)
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString('es-MX', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  })
+  return date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 ---
 
 <Layout title="Blog">
   <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
     <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
+      <!-- Header con efectos visuales -->
       <header class="mb-16 text-center relative">
         <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
           <div class="w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-20"></div>
@@ -34,30 +29,30 @@ function formatDate(date: Date) {
           Descubre artículos sobre desarrollo, tecnología y más
         </p>
         
-        <!-- Stats -->
+        <!-- Stats del blog -->
         <div class="mt-8 flex flex-wrap justify-center gap-6">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-blue-600">{totalPosts}</div>
-            <div class="text-sm text-gray-500">Artículos totales</div>
+          <div class="text-center px-4 py-3 bg-white rounded-xl shadow-sm border border-gray-100 min-w-[120px]">
+            <div class="text-3xl font-bold text-blue-600">{sortedPosts.length}</div>
+            <div class="text-sm text-gray-500">Artículos</div>
           </div>
-          <div class="text-center">
+          <div class="text-center px-4 py-3 bg-white rounded-xl shadow-sm border border-gray-100 min-w-[120px]">
             <div class="text-3xl font-bold text-purple-600">{totalPages}</div>
             <div class="text-sm text-gray-500">Páginas</div>
           </div>
         </div>
       </header>
 
-      <!-- Grid de artículos -->
+      <!-- Grid de artículos mejorado -->
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
         {posts.map((post, index) => (
           <article 
             class="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
             style={`animation-delay: ${index * 100}ms`}
           >
-            {/* Efecto de borde gradiente */}
+            {/* Efecto de borde gradiente al hacer hover */}
             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             
-            {/* Badge de destacado */}
+            {/* Badge de destacado para el primer artículo */}
             {index === 0 && (
               <div class="absolute top-4 left-4 z-10">
                 <span class="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
@@ -66,7 +61,7 @@ function formatDate(date: Date) {
               </div>
             )}
 
-            <a href={`/Blog/${post.slug}`} class="block">
+            <a href={import.meta.env.BASE_URL + `Blog/${post.slug}`} class="block">
               {post.data.image?.url && (
                 <div class="aspect-video overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                   <img 
@@ -80,7 +75,7 @@ function formatDate(date: Date) {
               )}
 
               <div class="p-6 relative">
-                {/* Tags */}
+                {/* Tags con diseño mejorado */}
                 {post.data.tags && post.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-2 mb-4">
                     {post.data.tags.slice(0, 2).map((tag: string) => (
@@ -104,7 +99,7 @@ function formatDate(date: Date) {
                   {post.data.description}
                 </p>
 
-                {/* Metadata */}
+                {/* Metadata mejorada */}
                 <div class="flex items-center justify-between pt-5 border-t border-gray-100">
                   <div class="flex items-center gap-3">
                     <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white text-xs font-bold">
@@ -131,11 +126,11 @@ function formatDate(date: Date) {
         ))}
       </div>
 
-      <!-- Paginación -->
+      <!-- Botón de paginación mejorado -->
       {totalPages > 1 && (
         <div class="text-center">
           <a 
-            href="/Blog/page/2" 
+            href={import.meta.env.BASE_URL + 'Blog/page/2'} 
             class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:-translate-y-0.5"
           >
             Ver más artículos
@@ -144,31 +139,17 @@ function formatDate(date: Date) {
             </svg>
           </a>
           <p class="mt-3 text-sm text-gray-500">
-            Página 1 de {totalPages} • {totalPosts} artículos
+            Página 1 de {totalPages} • {sortedPosts.length} artículos en total
           </p>
         </div>
       )}
 
-      <!-- Newsletter (opcional) -->
+      <!-- Sección de newsletter (opcional) -->
       <div class="mt-16 p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
         <div class="max-w-2xl mx-auto text-center">
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">¡No te pierdas nada!</h3>
           <p class="text-gray-600 mb-6">
-            Suscríbete para recibir las últimas entradas directamente en tu correo.
+            2026 Mauricio Nolazco Lonjino - Todos los derechos reservados.
           </p>
-          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="tu@email.com"
-              class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors"
-            />
-            <button 
-              type="submit"
-              class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-            >
-              Suscribirse
-            </button>
-          </form>
         </div>
       </div>
     </div>
@@ -189,6 +170,7 @@ function formatDate(date: Date) {
     overflow: hidden;
   }
   
+  /* Animaciones para los artículos */
   article {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
