@@ -1,9 +1,12 @@
 ---
+
 title: "Reflexiones de Año Nuevo 2025"
+slug: "ano-nuevo-2025"
 author: "Mauricio Nolazco Lonjino"
 description: "Mis metas y aprendizajes para el nuevo año"
 pubDate: 2025-01-01
 tags: ["reflexiones", "año nuevo", "metas"]
+
 ---
 
 # Reflexiones de Año Nuevo 2025

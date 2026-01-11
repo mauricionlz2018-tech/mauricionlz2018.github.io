@@ -1,6 +1,7 @@
 ---
 title: "Salida a Chapultepec"
 author: "Mauricio Nolazco Lonjino"
+slug: "salida-chapultepec"
 description: "Una memorable salida al bosque de Chapultepec"
 pubDate: 2025-01-15
 tags: ["viajes", "chapultepec", "naturaleza"]

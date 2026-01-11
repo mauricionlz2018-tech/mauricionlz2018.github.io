@@ -1,5 +1,6 @@
 ---
 title: Mi segunda entrada del blog con MarkDown
+slug: "interledger"
 author: Mauricio Nolazco Lonjino
 description: "Esta es mi segunda entrada del blog con MarkDown"
 image:

@@ -1,9 +1,9 @@
 ---
-title: "Mi primera entrada de blog"
-author: "Mauricio Nolazco Lonjino"
-description: "Primera entrada aprendiendo sobre Astro"
-pubDate: 2025-01-19
-tags: ["astro", "aprendizaje"]
+title: "Tu título"
+slug: "estancia-delfin"
+author: "Tu nombre"
+pubDate: 2024-01-01
+tags: [tag1, tag2]
 ---
 
 # ¡Bienvenido a mi blog! Primer apart
