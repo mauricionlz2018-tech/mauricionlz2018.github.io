@@ -47,6 +47,35 @@ function formatDate(date: Date) {
     day: 'numeric' 
   })
 }
+
+// Calcular qué páginas mostrar (mover la lógica fuera del JSX)
+function getPagesToShow(currentPage: number, totalPages: number, maxPagesToShow: number = 5) {
+  const pagesToShow = []
+  
+  if (totalPages <= maxPagesToShow) {
+    // Mostrar todas las páginas
+    for (let i = 1; i <= totalPages; i++) {
+      pagesToShow.push(i)
+    }
+  } else {
+    // Mostrar páginas alrededor de la página actual
+    let start = Math.max(1, currentPage - 2)
+    let end = Math.min(totalPages, start + maxPagesToShow - 1)
+    
+    // Ajustar si estamos cerca del final
+    if (end === totalPages) {
+      start = totalPages - maxPagesToShow + 1
+    }
+    
+    for (let i = start; i <= end; i++) {
+      pagesToShow.push(i)
+    }
+  }
+  
+  return pagesToShow
+}
+
+const pagesToShow = getPagesToShow(page, totalPages)
 ---
 
 <Layout title={`Blog - Página ${page}`}>
@@ -101,7 +130,7 @@ function formatDate(date: Date) {
         ))}
       </div>
 
-      <!-- Paginación numérica SIMPLIFICADA Y CORREGIDA -->
+      <!-- Paginación numérica CORREGIDA -->
       {totalPages > 1 && (
         <div class="mt-12">
           <nav class="flex items-center justify-center space-x-2" aria-label="Paginación">
@@ -117,54 +146,25 @@ function formatDate(date: Date) {
 
             {/* Números de página */}
             <div class="flex items-center space-x-1">
-              {
-                (() => {
-                  // Calcular qué páginas mostrar
-                  const pagesToShow = []
-                  const maxPagesToShow = 5
-                  
-                  if (totalPages <= maxPagesToShow) {
-                    // Mostrar todas las páginas
-                    for (let i = 1; i <= totalPages; i++) {
-                      pagesToShow.push(i)
-                    }
-                  } else {
-                    // Mostrar páginas alrededor de la página actual
-                    let start = Math.max(1, page - 2)
-                    let end = Math.min(totalPages, start + maxPagesToShow - 1)
-                    
-                    // Ajustar si estamos cerca del final
-                    if (end === totalPages) {
-                      start = totalPages - maxPagesToShow + 1
-                    }
-                    
-                    for (let i = start; i <= end; i++) {
-                      pagesToShow.push(i)
-                    }
-                  }
-                  
-                  // Generar los botones
-                  return pagesToShow.map(pageNum => {
-                    const isActive = page === pageNum
-                    const href = pageNum === 1 ? 
-                      `${import.meta.env.BASE_URL}Blog` : 
-                      `${import.meta.env.BASE_URL}Blog/page/${pageNum}`
-                    
-                    return (
-                      <a
-                        href={href}
-                        class={`px-4 py-2 rounded ${
-                          isActive
-                            ? 'bg-blue-600 text-white'
-                            : 'border border-gray-300 hover:bg-gray-50 text-gray-700'
-                        }`}
-                      >
-                        {pageNum}
-                      </a>
-                    )
-                  })
-                })()
-              }
+              {pagesToShow.map(pageNum => {
+                const isActive = page === pageNum
+                const href = pageNum === 1 ? 
+                  `${import.meta.env.BASE_URL}Blog` : 
+                  `${import.meta.env.BASE_URL}Blog/page/${pageNum}`
+                
+                return (
+                  <a
+                    href={href}
+                    class={`px-4 py-2 rounded ${
+                      isActive
+                        ? 'bg-blue-600 text-white'
+                        : 'border border-gray-300 hover:bg-gray-50 text-gray-700'
+                    }`}
+                  >
+                    {pageNum}
+                  </a>
+                )
+              })}
             </div>
 
             {/* Botón Siguiente */}
@@ -181,7 +181,7 @@ function formatDate(date: Date) {
           {/* Enlace para volver al inicio */}
           <div class="text-center mt-8 pt-6 border-t border-gray-200">
             <a href={`${import.meta.env.BASE_URL}Blog`} class="text-blue-600 hover:text-blue-700 font-medium underline decoration-2 underline-offset-4">
-              ← Volver al inicio
+                Volver al inicio
             </a>
           </div>
         </div>
