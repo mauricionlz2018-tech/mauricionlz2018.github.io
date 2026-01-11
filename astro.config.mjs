@@ -8,9 +8,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   // Apartado en donde se aloja el sitio debido a q
-  site: 'https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/',
+  site: 'https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io',
 
-  base: '/mauricionlz2018.github.io/',
+  base: '/mauricionlz2018.github.io',
 
   vite: {
     plugins: [tailwindcss()]
