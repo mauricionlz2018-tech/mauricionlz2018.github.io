@@ -6,15 +6,22 @@ description: "Crónica de una jornada mágica explorando el corazón verde de la
 pubDate: 2025-11-11
 tags: ["viajes", "chapultepec", "naturaleza", "cdmx", "aventura", "cultura"]
 image:
-  url: "/public/assets/images/chapultepec_2.jpeg"
-  alt: "Vista panorámica del Bosque de Chapultepec desde el Castillo"
+  url: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/images/chapultepec_1.jpeg"
+  alt: "Vista panorámica del Bosque de Chapultepec"
 ---
 
 #  Un Día Inolvidable en el Bosque de Chapultepec
 
 *Publicado el 11 de Noviembre de 2025 • 8 min de lectura • 📍 Ciudad de México*
 
-El Bosque de Chapultepec no es solo un parque; es el **pulmón de la Ciudad de México**, un espacio donde la historia, la cultura y la naturaleza se entrelazan en perfecta armonía. Hoy les comparto mi experiencia en este mágico lugar.
+![Entrada principal de Chapultepec](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/images/chapultepec_1.jpeg)
+*La majestuosa entrada al bosque más grande de Latinoamérica*
+
+![Vista del Castillo](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/images/chapultepec_2.jpeg)
+*El histórico Castillo de Chapultepec en todo su esplendor*
+
+![Paseo en el lago](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/images/chapultepec_3.jpeg)
+*Momento de tranquilidad en el Lago de Chapultepec*
 
 ##  Itinerario del Día
 
@@ -32,14 +39,6 @@ El Bosque de Chapultepec no es solo un parque; es el **pulmón de la Ciudad de M
 
 Nuestro recorrido comenzó en el **Castillo de Chapultepec**, el único castillo real en América. Subir la colina fue todo un reto, pero la vista valió cada paso.
 
-###  Galería del Castillo
-
-![Interior del Castillo de Chapultepec](/public/assets/images/chapultepec_1.jpeg)
-*Salón de recepciones del Castillo - Un viaje al México del siglo XIX*
-
-![Vista desde el mirador](/public/assets/images/chapultepec_3.jpeg)
-*Panorámica de la Ciudad de México desde el mirador del Castillo*
-
 **Datos curiosos del Castillo:**
 - Construido en el siglo XVIII como casa de verano para virreyes
 - Fue residencia imperial de Maximiliano y Carlota
@@ -48,46 +47,39 @@ Nuestro recorrido comenzó en el **Castillo de Chapultepec**, el único castillo
 
 > "Desde las alturas del Castillo, comprendí por qué Chapultepec significa 'cerro del chapulín' en náhuatl."
 
-##  Museo Nacional de Antropología
+##  Consejos Prácticos para tu Visita
 
-Nuestra siguiente parada fue el **Museo Nacional de Antropología**, uno de los museos más importantes del mundo.
+###  Costos aproximados:
+| Actividad | Costo (MXN) | Notas |
+|-----------|-------------|-------|
+| Entrada bosque | Gratis | Acceso general |
+| Castillo | $90 | Domingos gratis para nacionales |
+| Museo Antropología | $90 | Domingos gratis |
+| Lancha | $150 | Por 30 minutos |
 
-### Exposiciones destacadas:
-- **Sala Mexica**: Con la imponente Piedra del Sol
-- **Sala Maya**: Reconstrucción del Templo de las Inscripciones
-- **Sala Teotihuacán**: Maqueta de la Ciudad de los Dioses
-- **Sala Oaxaca**: Tesoros de Monte Albán
+###  Cómo llegar:
+- **Metro**: Línea 1, estación Chapultepec
+- **Metrobús**: Línea 7, estación Gandhi
+- **Auto**: Estacionamientos en cada sección
 
-###  Consejos para visitar:
-1. **Llegar temprano** para evitar multitudes
-2. **Calzado cómodo** - el museo es enorme
-3. **Guía audiovisual** disponible en la entrada
-4. **Reservar 3-4 horas** para una visita completa
+---
 
-##  Aventura en el Lago
+##  Reflexiones Finales
 
-Después del museo, nos dirigimos al **Lago de Chapultepec** para un paseo en lancha. El contraste entre la tranquilidad del lago y la bulliciosa ciudad alrededor es simplemente mágico.
+Chapultepec es mucho más que un simple parque. Es un **microcosmos de México** donde conviven historia, cultura y naturaleza.
 
-### Tipos de embarcaciones disponibles:
--  Lanchas de pedales (para 2-4 personas)
--  Botes de remos (tradicionales)
--  Velero eléctrico (para grupos)
--  Lancha con forma de cisne (¡muy fotogénica!)
+### Lo que más me impactó:
+1. **La riqueza histórica** en cada rincón
+2. **La biodiversidad** en medio de la urbe
+3. **La energía positiva** que se respira
 
-**Precios aproximados:**
-- Lancha de pedales: $150 MXN por 30 min
-- Bote de remos: $120 MXN por 30 min
-- Velero: $250 MXN por 45 min
+##  ¿Vale la pena visitar Chapultepec?
 
-##  El Jardín Botánico: Un Oasis de Paz
+**¡Absolutamente!** Ya seas turista, local, amante del arte o simplemente busques un escape natural en la ciudad.
 
-En la Segunda Sección del bosque encontramos el **Jardín Botánico**, un espacio dedicado a la conservación de la flora mexicana.
+---
 
-### Zonas del Jardín:
-```yaml
-zonas_botanico:
-  - invernadero: "Plantas tropicales y orquídeas"
-  - cactario: "Más de 100 especies de cactáceas"
-  - huerto: "Hierbas aromáticas y medicinales"
-  - bosque_templado: "Especies de climas fríos"
-  - jardín_acuatico: "Plantas de humedales"
+**¡Nos vemos en el siguiente aventura!** 🌳✨
+
+*Fotos tomadas por el autor durante la visita.*  
+*Recomendación: Visita temprano para disfrutar con menos gente.*
