@@ -1,5 +1,5 @@
 ---
-title: Interledger
+title: "Experiencia en Interledger Edomex 2025"
 slug: "interledger"
 author: Mauricio Nolazco Lonjino
 description: "Experiencia en Interledger Edomex 2025"
