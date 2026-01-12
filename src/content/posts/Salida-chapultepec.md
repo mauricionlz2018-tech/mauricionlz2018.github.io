@@ -6,7 +6,6 @@ description: "Crónica de la visita al museo del banco de México en la CDMX y e
 pubDate: 2025-11-11
 tags: ["viajes", "chapultepec", "naturaleza", "cdmx", "museo", "cultura"]
 image:
-  url: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/chapultepec_2.jpeg)"
   alt: "Vista desde adentro del museo de la CDMX"
 ---
 
