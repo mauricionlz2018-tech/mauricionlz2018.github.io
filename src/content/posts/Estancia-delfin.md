@@ -1,5 +1,5 @@
 ---
-title: "Tu título"
+title: "Estancia delfin"
 slug: "estancia-delfin"
 author: "Tu nombre"
 pubDate: 2024-01-01

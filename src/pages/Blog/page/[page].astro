@@ -192,7 +192,6 @@ const pagesToShow = getPagesToShow(page, totalPages)
                 Página <span class="font-semibold text-white">{page}</span> de <span class="font-semibold text-white">{totalPages}</span>
               </span>
               
-              {/* Saltar a página input */}
               <div class="hidden sm:flex items-center space-x-2">
                 <span class="text-sm text-gray-400">Ir a:</span>
                 <div class="relative">
@@ -217,7 +216,6 @@ const pagesToShow = getPagesToShow(page, totalPages)
             </div>
           </nav>
           
-          {/* Enlace para volver al inicio */}
           <div class="text-center mt-10 pt-8 border-t border-gray-800">
             <a href={`${import.meta.env.BASE_URL}Blog/`} 
                class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium group transition-colors">

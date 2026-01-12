@@ -1,24 +1,23 @@
 ---
-title: Mi segunda entrada del blog con MarkDown
+title: Interledger
 slug: "interledger"
 author: Mauricio Nolazco Lonjino
-description: "Esta es mi segunda entrada del blog con MarkDown"
+description: "Experiencia en Interledger Edomex 2025"
 image:
     url: "https://docs.astro.build/assets/arc.webp"
     alt: "The Astro logo on a dark background with a purple gradient arc."
-pubDate: 2022-07-08
-tags: ["astro", "blogging", "learning in public", "successes"]
+pubDate: 2025-09-17 - 2025-09-18
+tags: ["UMB", "React", "OpenPayments", "Interledger"]
 ---
-# Mi segunda entrada del blog con MarkDown
+# Experiencia en Interledger Edomex 2025
 
-Esta es mi segunda entrada del blog con MarkDown
+Fue la primera vez que participe en un evento así, en mi salon participaron todos los alumnos y salimos de la unidad como a las 5 de la mañana, nuestro destino era llegar a las 8 de la mañana a lo que es el **CEFODEM**, en donde se iba a hacer el evento.
 
-## ¿Qué es MarkDown?
+El evento consistia en desarrollar un sistema de pagos con OpenPayments, se podia usar cualquier herramienta de programación pero principalmente en React que es lo que recomendaban ellos.
 
-MarkDown es un lenguaje de marcado de texto que permite crear documentos de texto en una sintaxis sencilla y legible. Se utiliza como lenguaje de marcado para la creación de documentos, como artículos, páginas web, e-books, etc.
+![Interledger](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Interledger_1.jpeg)
+*Presente por la participacion en el evento*
 
-## ¿Por qué MarkDown?
+Estuvimos durante 1 dia completo en el evento programando el sistema para que funcionara bien, al final funciono de manera correcta la idea aunque no teniamos diseño, pero en todo lo demas funcionaba muy bien.
 
-MarkDown es una herramienta popular para crear documentos de texto, ya que es fácil de aprender y utilizar. Además, es compatible con varios sistemas de control de versiones, lo que le permite mantener un registro de cambios y versiones de los documentos.
-
-## Hola Mundo
+A pesar de no llevarnos ningun lugar conocimos mucho sobre aquella herramienta y ademas de conocer un nuevo lugar.
