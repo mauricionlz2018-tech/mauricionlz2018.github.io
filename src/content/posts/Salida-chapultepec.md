@@ -1,18 +1,18 @@
 ---
-title: "Un Día Inolvidable en el Bosque de Chapultepec"
+title: "Un Día Inolvidable en el Museo de la moneda en CDMX"
 author: "Mauricio Nolazco Lonjino"
 slug: "salida-chapultepec"
 description: "Crónica de una jornada mágica explorando el corazón verde de la Ciudad de México"
 pubDate: 2025-11-11
-tags: ["viajes", "chapultepec", "naturaleza", "cdmx", "aventura", "cultura"]
+tags: ["viajes", "chapultepec", "naturaleza", "cdmx", "museo", "cultura"]
 image:
   url: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/chapultepec_1.jpeg"
-  alt: "Vista panorámica del Bosque de Chapultepec"
+  alt: "Vista desde adentro del museo de la CDMX"
 ---
 
-# 🌳 Un Día Inolvidable en el Bosque de Chapultepec
+#  Un Día Inolvidable en el Museo de la moneda de la CDMX 
 
-*Publicado el 11 de Noviembre de 2025 • 8 min de lectura • 📍 Ciudad de México*
+*Publicado el 11 de Noviembre de 2025 • 8 min de lectura •  Ciudad de México*
 
 ![Entrada principal de Chapultepec](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/chapultepec_1.jpeg)
 *La majestuosa entrada al bosque más grande de Latinoamérica*
