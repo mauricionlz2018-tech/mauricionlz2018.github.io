@@ -89,7 +89,7 @@ const pagesToShow = getPagesToShow(page, totalPages)
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
         {posts.map(post => (
           <article class="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <a href={`${import.meta.env.BASE_URL}/Blog/${post.slug}/`} class="block">
+            <a href={`${import.meta.env.BASE_URL}Blog/${post.slug}/`} class="block">
               {post.data.image?.url && (
                 <div class="aspect-video overflow-hidden bg-gray-100">
                   <img 
@@ -137,7 +137,7 @@ const pagesToShow = getPagesToShow(page, totalPages)
             {/* Botón Anterior */}
             {page > 1 && (
               <a 
-                href={page === 2 ? `${import.meta.env.BASE_URL}/Blog/` : `${import.meta.env.BASE_URL}/Blog/page/${page - 1}/`}
+                href={page === 2 ? `${import.meta.env.BASE_URL}Blog/` : `${import.meta.env.BASE_URL}/Blog/page/${page - 1}/`}
                 class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-gray-700"
               >
                 Anterior
@@ -181,7 +181,7 @@ const pagesToShow = getPagesToShow(page, totalPages)
           {/* Enlace para volver al inicio */}
           <div class="text-center mt-8 pt-6 border-t border-gray-200">
             <a href={`${import.meta.env.BASE_URL}Blog`} class="text-blue-600 hover:text-blue-700 font-medium underline decoration-2 underline-offset-4">
-              ← Volver al inicio
+              Volver al inicio
             </a>
           </div>
         </div>
