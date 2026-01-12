@@ -15,7 +15,7 @@ Fue la primera vez que participe en un evento así, en mi salon participaron tod
 
 El evento consistia en desarrollar un sistema de pagos con OpenPayments, se podia usar cualquier herramienta de programación pero principalmente en React que es lo que recomendaban ellos.
 
-![Interledger](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Interledger_1.jpeg)
+![Interledger](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Interledger_3.jpeg)
 *Presente por la participacion en el evento*
 
 Estuvimos durante 1 dia completo en el evento programando el sistema para que funcionara bien, al final funciono de manera correcta la idea aunque no teniamos diseño, pero en todo lo demas funcionaba muy bien.

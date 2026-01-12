@@ -12,6 +12,7 @@ tags: ["astro", "learning in public", "setbacks", "community"]
 # Torneo de robots en la Universidad Mexiquense del Bicentenario
 
 ![Robots](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Imagen_robot_1.jpeg)
+*Robots en el torneo de la UMB*
 
 El torneo de robots en la Universidad Mexiquense del Bicentenario plantel San José del Rincón se hace cada año 
 anteriormente se hacia en los meses de abril o mayo pero ahora la fecha se movio para la semana academica y cultural el cual es en diciembre, por lo que los robots se empezaron a hacer desde septiembre.
