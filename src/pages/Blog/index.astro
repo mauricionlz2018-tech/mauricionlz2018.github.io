@@ -44,25 +44,25 @@ const paginationButtons = getPaginationButtons(currentPage, totalPages)
 ---
 
 <Layout title="Blog">
-  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+  <div class="min-h-screen bg-transparent">
     <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
       <!-- Header simple -->
       <header class="mb-16 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">
           Blog
         </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
           Descubre artículos sobre desarrollo, tecnología y más
         </p>
         
         <!-- Stats del blog -->
         <div class="mt-8 flex flex-wrap justify-center gap-6">
           <div class="text-center">
-            <div class="text-3xl font-bold text-blue-600">{totalPosts}</div>
+            <div class="text-3xl font-bold text-blue-400">{totalPosts}</div>
             <div class="text-sm text-gray-500">Artículos</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-purple-600">{totalPages}</div>
+            <div class="text-3xl font-bold text-purple-400">{totalPages}</div>
             <div class="text-sm text-gray-500">Páginas</div>
           </div>
         </div>
@@ -72,11 +72,11 @@ const paginationButtons = getPaginationButtons(currentPage, totalPages)
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
         {posts.map((post, index) => (
           <article 
-            class="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            class="group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
           >
             <a href={`${import.meta.env.BASE_URL}Blog/${post.slug}/`} class="block">
               {post.data.image?.url && (
-                <div class="aspect-video overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <div class="aspect-video overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                   <img 
                     src={post.data.image.url} 
                     alt={post.data.image.alt || post.data.title}
@@ -91,25 +91,25 @@ const paginationButtons = getPaginationButtons(currentPage, totalPages)
                 {post.data.tags && post.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-2 mb-4">
                     {post.data.tags.slice(0, 2).map((tag: string) => (
-                      <span class="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium">
+                      <span class="text-xs bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full font-medium">
                         #{tag}
                       </span>
                     ))}
                   </div>
                 )}
 
-                <h2 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                <h2 class="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors duration-300 line-clamp-2">
                   {post.data.title}
                 </h2>
                 
-                <p class="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
+                <p class="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
                   {post.data.description}
                 </p>
 
                 {/* Metadata */}
-                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div class="flex items-center justify-between pt-4 border-t border-gray-800">
                   <div class="flex items-center gap-3">
-                    <div class="text-xs font-medium text-gray-900">{post.data.author || 'Anónimo'}</div>
+                    <div class="text-xs font-medium text-gray-300">{post.data.author || 'Anónimo'}</div>
                   </div>
                   
                   <time 
@@ -125,68 +125,131 @@ const paginationButtons = getPaginationButtons(currentPage, totalPages)
         ))}
       </div>
 
-      <!-- Paginación numérica -->
+      <!-- Paginación mejorada - Tema oscuro -->
       {totalPages > 1 && (
-        <div class="mt-12">
-          <div class="text-center mb-4">
-            <p class="text-sm text-gray-500">
-              Página {currentPage} de {totalPages}
+        <div class="mt-16">
+          <div class="text-center mb-6">
+            <p class="text-sm text-gray-400">
+              Mostrando <span class="font-semibold text-white">{posts.length}</span> de <span class="font-semibold text-white">{totalPosts}</span> artículos
             </p>
           </div>
           
-          <nav class="flex items-center justify-center space-x-2" aria-label="Paginación">
-            {currentPage > 1 && (
-              <a 
-                href={`${import.meta.env.BASE_URL}/Blog/`}
-                class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-gray-700"
-              >
-                Primera
-              </a>
-            )}
-            
-            <div class="flex items-center space-x-1">
-              {paginationButtons.map(pageNum => {
-                const isActive = currentPage === pageNum
-                const href = pageNum === 1 
-                  ? `${import.meta.env.BASE_URL}Blog` 
-                  : `${import.meta.env.BASE_URL}Blog/page/${pageNum}`
-                
-                return (
-                  <a
-                    href={href}
-                    class={`px-4 py-2 rounded ${
-                      isActive
-                        ? 'bg-blue-600 text-white'
-                        : 'border border-gray-300 hover:bg-gray-50 text-gray-700'
-                    }`}
-                  >
-                    {pageNum}
-                  </a>
-                )
-              })}
+          <nav class="flex flex-col items-center gap-6" aria-label="Paginación">
+            <div class="flex items-center justify-center space-x-1">
+              {/* Botón Primera */}
+              {currentPage > 1 && (
+                <a 
+                  href={`${import.meta.env.BASE_URL}Blog/`}
+                  class="flex items-center justify-center px-4 py-3 glass-light rounded-l-lg hover:bg-gray-800/60 text-gray-300 hover:text-white transition-all duration-200 hover-glow"
+                >
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+                  Primera
+                </a>
+              )}
+              
+              {/* Números de página */}
+              <div class="flex items-center space-x-1">
+                {paginationButtons.map(pageNum => {
+                  const isActive = currentPage === pageNum
+                  const href = pageNum === 1 
+                    ? `${import.meta.env.BASE_URL}Blog/` 
+                    : `${import.meta.env.BASE_URL}Blog/page/${pageNum}/`
+                  
+                  return (
+                    <a
+                      href={href}
+                      class={`flex items-center justify-center w-10 h-10 rounded transition-all duration-200 ${
+                        isActive
+                          ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 transform scale-105'
+                          : 'glass-light text-gray-300 hover:bg-gray-800/60 hover:text-white hover-glow'
+                      }`}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {pageNum}
+                    </a>
+                  )
+                })}
+              </div>
+
+              {/* Botón Última */}
+              {currentPage < totalPages && (
+                <a 
+                  href={`${import.meta.env.BASE_URL}Blog/page/${totalPages}/`}
+                  class="flex items-center justify-center px-4 py-3 glass-light rounded-r-lg hover:bg-gray-800/60 text-gray-300 hover:text-white transition-all duration-200 hover-glow"
+                >
+                  Última
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                  </svg>
+                </a>
+              )}
             </div>
 
-            {currentPage < totalPages && (
-              <a 
-                href={`${import.meta.env.BASE_URL}Blog/page/${totalPages}/`}
-                class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-gray-700"
-              >
-                Última
-              </a>
-            )}
+            {/* Indicador y navegación avanzada */}
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-sm text-gray-400">
+                  Página <span class="font-semibold text-white">{currentPage}</span> de <span class="font-semibold text-white">{totalPages}</span>
+                </span>
+                
+                {/* Selector de página */}
+                <div class="hidden sm:flex items-center space-x-2">
+                  <span class="text-sm text-gray-400">Ir a:</span>
+                  <div class="relative">
+                    <select 
+                      onchange="if(this.value) window.location.href=this.value"
+                      class="appearance-none glass-light text-gray-300 rounded-md pl-3 pr-8 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      <option value="" disabled selected class="bg-gray-900">Seleccionar</option>
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map(num => (
+                        <option value={num === 1 ? `${import.meta.env.BASE_URL}Blog/` : `${import.meta.env.BASE_URL}Blog/page/${num}/`} class="bg-gray-900">
+                          {num}
+                        </option>
+                      ))}
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Botón de siguiente página */}
+              {totalPages > 1 && (
+                <a 
+                  href={`${import.meta.env.BASE_URL}Blog/page/2/`} 
+                  class="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Ver página 2
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              )}
+            </div>
           </nav>
           
-          {/* Enlace simple para ver más */}
-          {totalPages > 1 && (
-            <div class="text-center mt-8 pt-6 border-t border-gray-200">
-              <a 
-                href={`${import.meta.env.BASE_URL}Blog/page/2/`} 
-                class="text-blue-600 hover:text-blue-700 font-medium underline decoration-2 underline-offset-4 hover:decoration-blue-700 transition-colors"
-              >
-                Ver más entradas
+          {/* Información adicional */}
+          <div class="text-center mt-8 pt-6 border-t border-gray-800">
+            <p class="text-sm text-gray-400 mb-4">
+              Navega por todas nuestras entradas organizadas por fecha
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href={`${import.meta.env.BASE_URL}Blog/`} 
+                 class="text-blue-400 hover:text-blue-300 font-medium text-sm hover:underline">
+                📚 Ver todos los artículos
+              </a>
+              <span class="text-gray-600">•</span>
+              <a href={`${import.meta.env.BASE_URL}Blog/page/${totalPages}/`} 
+                 class="text-blue-400 hover:text-blue-300 font-medium text-sm hover:underline">
+                📖 Ir a la última página
               </a>
             </div>
-          )}
+          </div>
         </div>
       )}
     </div>
@@ -205,5 +268,23 @@ const paginationButtons = getPaginationButtons(currentPage, totalPages)
     -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical; 
     overflow: hidden;
+  }
+  .glass-dark {
+    background: rgba(24, 24, 27, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glass-light {
+    background: rgba(39, 39, 42, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
 </style>

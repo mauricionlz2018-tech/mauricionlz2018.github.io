@@ -2,10 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import ContactForm from '../../components/molecules/ContactForm.astro';
 import ContactForm1 from '../../components/molecules/ContactForm1.jsx'; 
+import Footer from '../../components/atoms/Footer.astro';
 
 ---
 
-<h1>Contact Us</h1>
 <Layout>
   <ContactForm1 client:load />
 </Layout>
+<Footer />
