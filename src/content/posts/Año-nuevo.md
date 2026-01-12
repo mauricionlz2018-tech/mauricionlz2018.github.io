@@ -24,6 +24,7 @@ El **2025** fue un año de transformación significativa. Entre los principales 
 
 
 ![Regalos](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Nuevo_add_1.jpeg)
+*Intercambio de regalos del año 2025*
 
 ##  Metas para el 2026
 
