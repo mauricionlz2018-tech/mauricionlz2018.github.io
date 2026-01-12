@@ -82,7 +82,7 @@ const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentInde
         <div>
           {prevPost && (
             <a 
-              href={`${import.meta.env.BASE_URL}Blog/${prevPost.slug}`} 
+              href={`${import.meta.env.BASE_URL}/Blog/${prevPost.slug}/`} 
               class="group flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
             >
               <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentInde
         <div class="text-right">
           {nextPost && (
             <a 
-              href={`${import.meta.env.BASE_URL}Blog/${nextPost.slug}`} 
+              href={`${import.meta.env.BASE_URL}/Blog/${nextPost.slug}/`} 
               class="group flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
             >
               <span>Siguiente: {nextPost.data.title}</span>
