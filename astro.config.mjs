@@ -12,6 +12,8 @@ export default defineConfig({
 
   base: '/mauricionlz2018.github.io',
 
+  trailingSlash: 'always',
+
   vite: {
     plugins: [tailwindcss()]
   },
