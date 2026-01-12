@@ -18,4 +18,6 @@ Algunos robots quedaron mientras que otros aun fallaban pero al final de cuentas
 
 ## Participación del equipo
 
-En
+En cuestion del robot se debian hacer equipos de 6 integrantes a lo mucho, el cual en el salón de 13SC171 salieron 3 equipos y pues cada uno deberia de hacer un robot propio, y como tal tenia que agregar un arma por que deberia de destruir el del rival.
+
+A pesar de no ganar nos llevamos muy buena experencia y tambien hemos aprendido muchas cosas nuevas. 
