@@ -4,9 +4,9 @@ slug: "interledger"
 author: Mauricio Nolazco Lonjino
 description: "Experiencia en Interledger Edomex 2025"
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "The Astro logo on a dark background with a purple gradient arc."
-pubDate: 2025-09-17 - 2025-09-18
+    url: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Interledger_2.jpeg"
+    alt: "Interledger Edomex 2025"
+pubDate: 2025-09-17
 tags: ["UMB", "React", "OpenPayments", "Interledger"]
 ---
 # Experiencia en Interledger Edomex 2025
