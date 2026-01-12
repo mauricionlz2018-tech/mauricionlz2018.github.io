@@ -30,9 +30,36 @@ import "../styles/global.css";
       </div>
     </div>
 
-    <main class="grow">
+    <main class="grow relative">
+      <!-- Gradiente adicional para mejor contraste -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/5 to-transparent -z-5"></div>
       <slot />
     </main>
     <div class="bg-animated"></div>
+
+    <style>
+      /* Añade estos estilos para mejor rendimiento */
+      .glass-dark {
+        background: rgba(24, 24, 27, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .glass-light {
+        background: rgba(39, 39, 42, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .hover-glow {
+        transition: all 0.3s ease;
+      }
+      
+      .hover-glow:hover {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+    </style>
   </body>
 </html>
