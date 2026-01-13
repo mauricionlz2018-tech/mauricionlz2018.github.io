@@ -1,9 +1,13 @@
 ---
 title: "Estancia delfin"
 slug: "estancia-delfin"
-author: "Tu nombre"
+author: "Mauricio Nolazco Lonjino"
+description: "Experiencia en el programa delfin"
 pubDate: 2025-03-06
 tags: ["Estancia", "Proyectos", "Programa delfin"]
+image:
+  url: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Delfin_1.jpeg"
+  alt: "Regalos de año nuevo"
 ---
 
 # Estancia delfin 
