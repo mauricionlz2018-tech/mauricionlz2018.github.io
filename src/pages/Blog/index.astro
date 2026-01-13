@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import Footer from '../../components/atoms/Footer.astro'
 import type { CollectionEntry } from 'astro:content'
 
 const allPosts = await getCollection('posts', ({ data }: { data: Record<string, any> }) => data.draft !== true)
@@ -255,6 +256,7 @@ const paginationButtons = getPaginationButtons(currentPage, totalPages)
     </div>
   </div>
 </Layout>
+<Footer/>
 
 <style>
   .line-clamp-2 { 
