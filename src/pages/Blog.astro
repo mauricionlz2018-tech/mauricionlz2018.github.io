@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
+import Footer from '../components/atoms/Footer.astro';
 
 const allPosts = await getCollection('posts', ({ data }) => {
   return data.draft !== true;
@@ -78,6 +79,7 @@ const pageTitle = "Mi Blog";
     </div>
   </div>
 </Layout>
+<Footer />
 
 <style>
   .line-clamp-2 { 
