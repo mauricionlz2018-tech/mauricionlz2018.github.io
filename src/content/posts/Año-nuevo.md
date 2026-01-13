@@ -5,8 +5,8 @@ author: "Mauricio Nolazco Lonjino"
 description: "Mis metas, aprendizajes y reflexiones para el nuevo año 2025"
 pubDate: 2026-01-01
 tags: ["reflexiones", "año nuevo", "metas", "crecimiento personal", "tecnología"]
-image:
-  alt: "Fuegos artificiales en la noche de año nuevo"
+image: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Nuevo_add.jpeg"
+  alt: "Regalos"
 ---
 
 # Reflexiones de Año Nuevo 2026
