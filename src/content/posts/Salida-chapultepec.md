@@ -1,11 +1,11 @@
 ---
-title: "Un Día Inolvidable en el Museo del banco de México en la CDMX"
+title: "Visita al Museo del banco de México y el bosque de Chapultepec en la CDMX"
 author: "Mauricio Nolazco Lonjino"
 slug: "salida-chapultepec"
 description: "Crónica de la visita al museo del banco de México en la CDMX y el bosque de Chapultepec"
 pubDate: 2025-11-11
 tags: ["viajes", "chapultepec", "naturaleza", "cdmx", "museo", "cultura"]
-image:
+image:  "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/chapultepec_2.jpeg"
   alt: "Vista desde adentro del museo de la CDMX"
 ---
 

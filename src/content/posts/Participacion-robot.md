@@ -1,15 +1,15 @@
 ---
-title: Participación del robot 
+title: Participación del robot en la UMB San José del Rincón
 author: Mauricio Nolazco Lonjino
 description: "Mi experencia sobre el torneo de robot en la UMB San José del Rincón"
 image:
-    url: "https://docs.astro.build/assets/rays.webp"
+    url: "https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Imagen_5.jpeg"
     alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2025-12-06
-tags: ["astro", "learning in public", "setbacks", "community"]
+tags: ["torneo", "robot", "competencia", "universidad"]
 ---
 
-# Torneo de robots en la Universidad Mexiquense del Bicentenario
+# Torneo de robots en la Universidad Mexiquense del Bicentenario San José del Rincón
 
 ![Robots](https://mauricionlz2018-tech.github.io/mauricionlz2018.github.io/assets/images/Imagen_robot_1.jpeg)
 *Robots en el torneo de la UMB*
