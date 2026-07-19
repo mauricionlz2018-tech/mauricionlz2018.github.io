@@ -1,0 +1,28 @@
+Mauricio Nolazco Lonjino
+
+Perfil
+Estudiante de Ingenieria en Sistemas Computacionales enfocado en desarrollo web, interfaces y soluciones funcionales.
+
+Habilidades
+- HTML
+- CSS
+- JavaScript
+- Python
+- MySQL
+- Node.js
+- React
+- Astro
+- Tailwind CSS
+
+Formacion
+Universidad Mexiquense del Bicentenario
+Septimo semestre de Ingenieria en Sistemas Computacionales
+
+Intereses
+- Desarrollo frontend y backend
+- UI/UX
+- Proyectos web modernos
+- Aprendizaje continuo
+
+Contacto
+Portafolio personal y redes sociales disponibles en el sitio web.

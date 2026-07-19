@@ -8,11 +8,11 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
-  <main class="grow pt-12 px-4 text-white font-sans">
+  <main class="grow px-4 pt-12 font-sans text-[var(--text)]">
     <div class="mx-auto max-w-md">
       <div class="text-center mb-10">
-        <h1 class="text-3xl font-bold tracking-tight">Mis Conocimientos y/o Habilidades</h1>
-        <p class="mt-2 text-base text-zinc-400">
+        <h1 class="fade-in text-3xl font-bold tracking-tight">Mis Conocimientos y/o Habilidades</h1>
+        <p class="fade-in delay-1 mt-2 text-base text-[var(--text-muted)]">
           Conocimientos y Habilidades que estoy aprendiendo.
         </p>
       </div>
@@ -41,28 +41,52 @@ const base = import.meta.env.BASE_URL;
         <div>
           <h2 class="text-lg font-semibold mb-4">Diseño</h2>
 
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">Figma</span>
-            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">Adobe XD</span>
-            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">UI/UX</span>
-            <span class="rounded-full bg-blue-600/20 px-3 py-1 text-sm font-medium text-blue-400">Blender</span>
+          <div class="space-y-3">
+            <div class="skill">
+              <span>Figma</span>
+              <div class="bar"><div class="fill" style="--w: 82%"></div></div>
+            </div>
+            <div class="skill">
+              <span>Adobe XD</span>
+              <div class="bar"><div class="fill" style="--w: 68%"></div></div>
+            </div>
+            <div class="skill">
+              <span>UI/UX</span>
+              <div class="bar"><div class="fill" style="--w: 75%"></div></div>
+            </div>
+            <div class="skill">
+              <span>Blender</span>
+              <div class="bar"><div class="fill" style="--w: 45%"></div></div>
+            </div>
           </div>
         </div>
 
         <div>
           <h2 class="text-lg font-semibold mb-4">Otras Herramientas</h2>
 
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-gray-800 px-3 py-1 text-sm font-medium text-gray-400">GitHub</span>
-            <span class="rounded-full bg-gray-800 px-3 py-1 text-sm font-medium text-gray-400">Docker</span>
-            <span class="rounded-full bg-gray-800 px-3 py-1 text-sm font-medium text-gray-400">Linux</span>
-            <span class="rounded-full bg-gray-800 px-3 py-1 text-sm font-medium text-gray-400">MySQL</span>
+          <div class="space-y-3">
+            <div class="skill">
+              <span>GitHub</span>
+              <div class="bar"><div class="fill" style="--w: 88%"></div></div>
+            </div>
+            <div class="skill">
+              <span>Docker</span>
+              <div class="bar"><div class="fill" style="--w: 55%"></div></div>
+            </div>
+            <div class="skill">
+              <span>Linux</span>
+              <div class="bar"><div class="fill" style="--w: 64%"></div></div>
+            </div>
+            <div class="skill">
+              <span>MySQL</span>
+              <div class="bar"><div class="fill" style="--w: 72%"></div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </main>
-    <center><footer> 2025 &copy; Todos los derechos reservados "Mauricio Nolazco Lonjino"</footer></center>
+    <center><footer class="text-sm text-[var(--text-muted)]"> 2025 &copy; Todos los derechos reservados "Mauricio Nolazco Lonjino"</footer></center>
 
 
   <Footer />

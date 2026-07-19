@@ -1,5 +1,22 @@
 ---
 import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Mauricio Nolazco | Portafolio",
+  description = "Portafolio personal de Mauricio Nolazco con proyectos, conocimientos y blog.",
+  image,
+} = Astro.props as Props;
+
+let base = import.meta.env.BASE_URL;
+if (!base.endsWith("/")) base += "/";
+
+const ogImage = image ?? `${base}favicon.svg`;
 ---
 
 <!doctype html>
@@ -7,59 +24,28 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Mauricio Nolazco | Portafolio</title>
+    <title>{title}</title>
   </head>
 
-  <body class="min-h-screen flex flex-col bg-[#18181B] text-white font-sans">
-    <div class="absolute inset-0 -z-10 overflow-hidden">
-      <div class="animate-pulse-slow pointer-events-none">
-        <div
-          class="absolute -top-40 -left-40 h-[400px] w-[400px] bg-purple-800/20 blur-3xl rounded-full"
-        >
-        </div>
-        <div
-          class="absolute bottom-0 right-0 h-[300px] w-[300px] bg-pink-400/10 blur-3xl rounded-full"
-        >
-        </div>
-      </div>
-    </div>
-
+  <body class="min-h-screen flex flex-col font-sans">
     <main class="grow relative">
-      <!-- Gradiente adicional para mejor contraste -->
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/5 to-transparent -z-5"></div>
       <slot />
     </main>
     <div class="bg-animated"></div>
-
-    <style>
-      /* Añade estos estilos para mejor rendimiento */
-      .glass-dark {
-        background: rgba(24, 24, 27, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .glass-light {
-        background: rgba(39, 39, 42, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      
-      .hover-glow {
-        transition: all 0.3s ease;
-      }
-      
-      .hover-glow:hover {
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-      }
-    </style>
   </body>
 </html>

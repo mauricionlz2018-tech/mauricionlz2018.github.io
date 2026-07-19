@@ -30,24 +30,24 @@ const navItems: Item[] = [
 
   <Button items={navItems} />
 
-  <main class="pt-16 px-4 flex flex-col items-center text-center gap-6">
+  <main class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 pt-16 text-center">
     <div
       class="h-28 w-28 rounded-full bg-cover bg-center"
       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnGBggDbP...");'
     >
     </div>
 
-    <h1 class="text-2x1 font-bold">Bienvenido al portafolio</h1>
+    <h1 class="fade-in text-3xl font-bold sm:text-4xl">Bienvenido al portafolio</h1>
 
-    <h1 class="text-2xl font-bold">Mauricio Nolazco Lonjino</h1>
+    <h1 class="fade-in text-2xl font-bold sm:text-3xl">Mauricio Nolazco Lonjino</h1>
 
     <p
-      class="text-sm max-w-md text-text-light-secondary dark:text-text-dark-secondary"
+      class="fade-in delay-1 max-w-md text-sm leading-relaxed text-[var(--text-muted)]"
     >
-      Me gusta mucho los vieojuegos, la musica, ademas me encanta la tecnología.
+      Me gusta mucho los videojuegos, la música y además me encanta la tecnología.
     </p>
 
-    <h2>Mis redes sociales</h2>
+    <h2 class="fade-in text-lg font-semibold">Mis redes sociales</h2>
 
     <div class="flex gap-4">
       <IconButton
@@ -60,7 +60,7 @@ const navItems: Item[] = [
       <IconButton icon="tiktok" link="https://tiktok.com/@themiauu66" />
     </div>
   </main>
-  <center><footer> 2025 &copy; Todos los derechos reservados "Mauricio Nolazco Lonjino"</footer></center>
+  <center><footer class="text-sm text-[var(--text-muted)]"> 2025 &copy; Todos los derechos reservados "Mauricio Nolazco Lonjino"</footer></center>
 
   <!-- <MainMe /> -->
 

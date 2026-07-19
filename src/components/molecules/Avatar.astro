@@ -9,10 +9,21 @@ const { src, alt = "Avatar", size = "w-40 h-40" } = Astro.props;
 ---
 
 <div class="relative flex items-center justify-center">
-  <div class="absolute inset-0 blur-2xl rounded-full bg-purple-500/20 animate-pulse"></div>
+  <div class="absolute inset-0 blur-2xl rounded-full bg-[var(--secondary)]/20 animate-pulse"></div>
   <img
     src={src}
     alt={alt}
-    class={`relative z-10 rounded-full object-cover border-2 border-purple-400/30 shadow-xl ${size}`}
+    class={`profile-photo relative z-10 rounded-full object-cover border-[3px] border-[var(--primary)] shadow-xl ${size}`}
   />
 </div>
+
+<style>
+  .profile-photo {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .profile-photo:hover {
+    transform: rotate(3deg) scale(1.05);
+    box-shadow: 0 20px 45px rgba(56, 189, 248, 0.22);
+  }
+</style>

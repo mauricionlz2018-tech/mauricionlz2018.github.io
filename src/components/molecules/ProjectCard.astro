@@ -3,31 +3,63 @@ interface Props {
   title: string;
   image: string;
   tags: { label: string; bg: string; text: string }[];
+  description?: string;
+  repo?: string;
+  demo?: string;
 }
 
-const { title, image, tags } = Astro.props as Props;
+const { title, image, tags, description, repo, demo } = Astro.props as Props;
 ---
 
 <div
-  class="group relative w-full overflow-hidden rounded-xl bg-card-light shadow-md 
-         transition-shadow duration-300 hover:shadow-lg dark:bg-card-dark flex flex-col"
+  class="project-card group relative flex w-full flex-col"
 >
-  <img 
-    src={image}
-    alt={title}
-    loading="lazy"
-    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-  />
+  <div class="aspect-[16/10] overflow-hidden bg-[var(--bg)]">
+    <img 
+      src={image}
+      alt={title}
+      loading="lazy"
+      class="h-full w-full object-cover"
+    />
+  </div>
 
-  <div class="p-3 flex flex-col grow">
-    <h2 class="text-sm font-bold text-left leading-tight">{title}</h2>
+  <div class="flex flex-1 flex-col gap-4 p-4">
+    <div>
+      <h2 class="text-base font-bold leading-tight text-[var(--text)]">{title}</h2>
+      {description && (
+        <p class="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">{description}</p>
+      )}
+    </div>
 
-    <div class="mt-auto pt-2 flex flex-wrap gap-1">
+    <div class="mt-auto flex flex-wrap gap-1.5">
       {tags.map(tag => (
-        <span class={`tag px-2 py-0.5 rounded-md text-xs font-medium ${tag.bg} ${tag.text}`}>
+        <span class={`tag rounded-md text-xs font-medium ${tag.bg} ${tag.text}`}>
           {tag.label}
         </span>
       ))}
+    </div>
+
+    <div class="flex flex-wrap gap-2 pt-1">
+      {repo && (
+        <a
+          href={repo}
+          target="_blank"
+          rel="noreferrer"
+          class="rounded-full bg-[var(--primary)] px-3 py-1.5 text-xs font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5"
+        >
+          Repo
+        </a>
+      )}
+      {demo && (
+        <a
+          href={demo}
+          target="_blank"
+          rel="noreferrer"
+          class="rounded-full border border-[var(--primary)] px-3 py-1.5 text-xs font-semibold text-[var(--text)] transition-colors duration-300 hover:bg-[var(--primary)] hover:text-slate-950"
+        >
+          Demo
+        </a>
+      )}
     </div>
   </div>
 </div>

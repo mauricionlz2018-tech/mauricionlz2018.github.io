@@ -10,6 +10,7 @@ const projects = [
     title: "Plataforma de pagos con Open Payments (MicroPay)",
     description: "Plataforma de pagos ",
     github: "https://github.com/mauricionlz2018-tech/MicroPay",
+    demo: "https://github.com/mauricionlz2018-tech/MicroPay",
     image: `${base}/assets/images/MicroPay.jpeg`,
     tags: [
       { label: "React", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
@@ -18,6 +19,8 @@ const projects = [
   },
   {
     title: "Sistema para el seguimiento de egresados de la UMB",
+    github: "https://github.com/mauricionlz2018-tech/egresados-umb",
+    demo: "https://github.com/mauricionlz2018-tech/egresados-umb",
     image: `${base}/assets/images/egresados.png`,
     tags: [
       { label: "mysql", bg: "bg-[#532224]", text: "text-[#fc9773]" },
@@ -28,6 +31,8 @@ const projects = [
   },
   {
     title: "Proyecto de una página web en la Epo 316",
+    github: "https://github.com/mauricionlz2018-tech/epo316",
+    demo: "https://github.com/mauricionlz2018-tech/epo316",
     image: `${base}/assets/images/Escuelaepo.png`,
     tags: [
       { label: "html", bg: "bg-[#22305A]", text: "text-[#88C3FD]" },
@@ -41,28 +46,31 @@ const projects = [
 <Layout>
   <main class="grow pt-16 px-4">
     <div class="flex w-full flex-col items-center gap-8 text-center">
-      <h1 class="text-3xl font-bold text-gradient">Proyectos</h1>
+      <h1 class="fade-in text-3xl font-bold">Proyectos</h1>
 
       <p
-        class="max-w-md text-base text-text-light-secondary dark:text-text-dark-secondary"
+        class="fade-in delay-1 max-w-md text-base text-[var(--text-muted)]"
       >
         Proyectos principales.
       </p>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
+      <div class="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {
           projects.map((project) => (
             <ProjectCard
               title={project.title}
               image={project.image}
               tags={project.tags}
+              description={project.description}
+              repo={project.github}
+              demo={project.demo}
             />
           ))
         }
       </div>
     </div>
   </main>
-    <center><footer> 2025 &copy; Todos los derechos reservados "Mauricio Nolazco Lonjino"</footer></center>
+    <center><footer class="text-sm text-[var(--text-muted)]"> 2025 &copy; Todos los derechos reservados "Mauricio Nolazco Lonjino"</footer></center>
 
 
   <Footer />
